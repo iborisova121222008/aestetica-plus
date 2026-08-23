@@ -7,11 +7,25 @@ export type FoundationDictionary = Readonly<{
   }>;
   navigation: Readonly<{
     language: string;
+    skipToContent: string;
   }>;
   foundation: Readonly<{
     eyebrow: string;
     title: string;
     description: string;
+    actions: Readonly<{
+      primary: string;
+      secondary: string;
+      tertiary: string;
+    }>;
+    preview: Readonly<{
+      label: string;
+      title: string;
+      description: string;
+      statusLabel: string;
+      status: string;
+    }>;
+    details: string;
   }>;
 }>;
 
@@ -22,11 +36,28 @@ const bg = {
   },
   navigation: {
     language: "Избор на език",
+    skipToContent: "Към основното съдържание",
   },
   foundation: {
-    eyebrow: "Начална проектна основа",
-    title: "Основата на Aestetica Plus работи.",
-    description: "Next.js приложението е готово за следващия етап на разработка.",
+    eyebrow: "Визуална основа",
+    title: "Дизайн системата на Aestetica Plus е готова за преглед.",
+    description:
+      "Това е временен визуален пример на споделените цветове, типография, форми и ритъм — не завършената начална страница.",
+    actions: {
+      primary: "Виж визуалния пример",
+      secondary: "Прочети за основата",
+      tertiary: "Към началото",
+    },
+    preview: {
+      label: "Примерен компонент",
+      title: "Спокойна, ясна и последователна основа",
+      description:
+        "Матова повърхност, деликатен контур и премерен акцент показват как бъдещите интерфейси могат да останат елегантни и лесни за използване.",
+      statusLabel: "Състояние",
+      status: "Основа в разработка",
+    },
+    details:
+      "Този екран демонстрира само базовите визуални решения и достъпни състояния. Реалното съдържание и финалната начална страница предстоят.",
   },
 } as const satisfies FoundationDictionary;
 
@@ -37,11 +68,28 @@ const en = {
   },
   navigation: {
     language: "Choose language",
+    skipToContent: "Skip to main content",
   },
   foundation: {
-    eyebrow: "Initial project foundation",
-    title: "Aestetica Plus foundation is running.",
-    description: "The Next.js application is ready for the next implementation phase.",
+    eyebrow: "Visual foundation",
+    title: "The Aestetica Plus design system is ready for review.",
+    description:
+      "This is a temporary visual preview of the shared colours, typography, shapes, and rhythm — not the finished homepage.",
+    actions: {
+      primary: "View the visual preview",
+      secondary: "Read about the foundation",
+      tertiary: "Back to the top",
+    },
+    preview: {
+      label: "Sample component",
+      title: "A calm, clear, and consistent foundation",
+      description:
+        "A matte surface, delicate border, and measured accent show how future interfaces can remain elegant and easy to use.",
+      statusLabel: "Status",
+      status: "Foundation in progress",
+    },
+    details:
+      "This screen demonstrates only the base visual decisions and accessible states. Real content and the final homepage will follow later.",
   },
 } as const satisfies FoundationDictionary;
 

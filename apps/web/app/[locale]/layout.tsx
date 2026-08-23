@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 
 import { i18n, isLocale } from "@/i18n/config";
 
+import { inter, playfairDisplay } from "../fonts";
 import "../globals.css";
 
 type LocaleLayoutProps = Readonly<{
@@ -22,7 +23,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   }
 
   return (
-    <html lang={i18n.htmlLanguages[locale]}>
+    <html
+      className={`${inter.variable} ${playfairDisplay.variable}`}
+      lang={i18n.htmlLanguages[locale]}
+    >
       <body>{children}</body>
     </html>
   );
