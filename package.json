@@ -1,0 +1,19 @@
+{
+  "name": "estetica-plus",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=22.14.0",
+    "pnpm": ">=11.22.0"
+  },
+  "scripts": {
+    "dev": "corepack pnpm --parallel --filter @estetica-plus/web --filter @estetica-plus/api dev",
+    "dev:web": "corepack pnpm --filter @estetica-plus/web dev",
+    "dev:api": "corepack pnpm --filter @estetica-plus/api dev",
+    "lint": "corepack pnpm --recursive lint",
+    "type-check": "corepack pnpm --recursive type-check",
+    "test": "corepack pnpm --recursive --if-present test",
+    "build": "corepack pnpm --recursive build"
+  }
+}

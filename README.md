@@ -241,17 +241,40 @@ The exact Prisma schema is created only after these approved rules are reflected
 
 ## Quick Start
 
-The applications have not been scaffolded yet. Setup commands will be added only after the documentation and initial architecture decisions are approved.
+Requirements:
 
-Until then:
+- Node.js 22.14.0 or newer;
+- Corepack.
 
-1. Read `README.md`.
-2. Read `ARCHITECTURE.md`.
-3. Read the task-specific file in `docs/`.
-4. Read `AGENTS.md` before any AI-assisted implementation.
-5. Work on one bounded change at a time.
-6. Run the required verification commands.
-7. Commit one completed logical change.
+Install the workspace dependencies:
+
+```bash
+corepack pnpm install
+```
+
+Start both applications:
+
+```bash
+corepack pnpm dev
+```
+
+Or start them separately:
+
+```bash
+corepack pnpm dev:web
+corepack pnpm dev:api
+```
+
+The web application runs at `http://localhost:3000` and the API health endpoint is available at `http://localhost:4000/health`.
+
+Run the foundation checks:
+
+```bash
+corepack pnpm lint
+corepack pnpm type-check
+corepack pnpm test
+corepack pnpm build
+```
 
 ## Git Workflow
 
