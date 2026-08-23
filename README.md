@@ -1,8 +1,8 @@
-# Estetica Plus
+# Aestetica Plus
 
-Production-ready bilingual website and appointment platform for the Estetica Plus beauty and aesthetics studio.
+Production-ready bilingual website and appointment platform for the Aestetica Plus beauty and aesthetics studio.
 
-- Domain: `esteticaplus.bg`
+- Domain: `aesteticaplus.bg`
 - Primary locale: Bulgarian (`bg`)
 - Secondary locale: English (`en`)
 - Hosting target: SuperHosting VPS
@@ -106,7 +106,7 @@ Detailed rules belong in `docs/12-internationalization.md`.
 The approved documentation structure is:
 
 ```text
-estetica-plus/
+aestetica-plus/
 ├── README.md
 ├── ARCHITECTURE.md
 ├── AGENTS.md
