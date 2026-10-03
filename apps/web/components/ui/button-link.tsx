@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type ButtonLinkVariant = "primary" | "secondary" | "tertiary";
+type ButtonLinkVariant = "primary" | "secondary" | "tertiary" | "inverted";
 
 type ButtonLinkProps = Readonly<{
   children: ReactNode;
@@ -17,6 +17,8 @@ const variantClasses: Record<ButtonLinkVariant, string> = {
     "border-border-strong bg-surface text-foreground hover:border-foreground hover:bg-surface-pure active:translate-y-px",
   tertiary:
     "border-transparent bg-transparent px-3 text-rose-deep underline-offset-4 hover:bg-rose-soft hover:text-foreground hover:underline active:translate-y-px",
+  inverted:
+    "border-surface-pure bg-surface-pure text-foreground hover:border-rose-soft hover:bg-rose-soft active:translate-y-px",
 };
 
 export function ButtonLink({

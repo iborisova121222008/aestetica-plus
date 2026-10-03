@@ -43,6 +43,8 @@
   --content: 70rem;
   --content-wide: 82.5rem;
   --application: 90rem;
+  --header-height-mobile: 5rem;
+  --header-height-desktop: 6.5rem;
 
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
@@ -51,12 +53,29 @@
   --radius-full: 9999px;
   --shadow-soft: 0 8px 30px rgba(33, 29, 27, 0.06);
   --shadow-dialog: 0 20px 60px rgba(33, 29, 27, 0.14);
+  --border-width-default: 1px;
+  --border-width-strong: 2px;
 
   --motion-fast: 120ms;
   --motion-default: 200ms;
   --motion-slow: 360ms;
   --motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
   --motion-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --hero-overlay-mobile: linear-gradient(
+      180deg,
+      rgba(33, 29, 27, 0.28) 0%,
+      rgba(33, 29, 27, 0.42) 36%,
+      rgba(33, 29, 27, 0.88) 100%
+    ),
+    linear-gradient(90deg, rgba(33, 29, 27, 0.48), rgba(33, 29, 27, 0.08));
+  --hero-overlay-desktop: linear-gradient(
+      90deg,
+      rgba(33, 29, 27, 0.82) 0%,
+      rgba(33, 29, 27, 0.66) 36%,
+      rgba(33, 29, 27, 0.18) 68%,
+      rgba(33, 29, 27, 0.08) 100%
+    ),
+    linear-gradient(180deg, rgba(33, 29, 27, 0.24), rgba(33, 29, 27, 0.12));
 }
 
 @theme inline {
@@ -85,6 +104,8 @@
 
   --font-body: var(--font-body-family);
   --font-display: var(--font-editorial-family);
+  --text-display-xl: clamp(2.75rem, 6.5vw, 4.5rem);
+  --text-display-xl--line-height: 1.06;
   --text-display-lg: clamp(2.375rem, 8vw, 3.5rem);
   --text-display-lg--line-height: 1.08;
   --text-heading-2: clamp(1.75rem, 5vw, 2.375rem);
@@ -94,6 +115,9 @@
   --container-content: var(--content);
   --container-content-wide: var(--content-wide);
   --container-application: var(--application);
+
+  --spacing-header-mobile: var(--header-height-mobile);
+  --spacing-header-desktop: var(--header-height-desktop);
 
   --radius-design-sm: var(--radius-sm);
   --radius-design-md: var(--radius-md);
@@ -155,6 +179,16 @@ body {
 ::selection {
   background: var(--rose-soft);
   color: var(--foreground);
+}
+
+.hero-overlay {
+  background: var(--hero-overlay-mobile);
+}
+
+@media (min-width: 48rem) {
+  .hero-overlay {
+    background: var(--hero-overlay-desktop);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
