@@ -6,8 +6,7 @@ export type PublicRoutes = Readonly<{
   home: `/${Locale}`;
   services: string;
   gallery: string;
-  about: string;
-  contact: string;
+  shop: string;
   booking: string;
 }>;
 
@@ -58,16 +57,14 @@ const publicRoutes = {
     home: "/bg",
     services: "/bg/uslugi",
     gallery: "/bg/galeriya",
-    about: "/bg/za-nas",
-    contact: "/bg/kontakti",
+    shop: "/bg/magazin",
     booking: "/bg#booking-placeholder",
   },
   en: {
     home: "/en",
     services: "/en/services",
     gallery: "/en/gallery",
-    about: "/en/about",
-    contact: "/en/contact",
+    shop: "/en/shop",
     booking: "/en#booking-placeholder",
   },
 } as const satisfies Record<Locale, PublicRoutes>;

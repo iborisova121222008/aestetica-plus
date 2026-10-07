@@ -67,7 +67,13 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
       <SiteHeader locale={locale} navigation={dictionary.navigation} routes={routes} />
 
       <main id="main-content">
-        <Hero bookingHref={routes.booking} content={dictionary.hero} locale={locale} />
+        <Hero
+          buttonText={dictionary.hero.buttonText}
+          glossyImage="/images/hero-glossy.png"
+          matteImage="/images/hero-matte.png"
+          subtitle={dictionary.hero.subtitle}
+          title={dictionary.hero.title}
+        />
         <Introduction content={dictionary.introduction} />
       </main>
     </>

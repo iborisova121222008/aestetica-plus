@@ -2,54 +2,79 @@ import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
-import type { Locale } from "@/i18n/config";
-import type { SiteDictionary } from "@/i18n/dictionaries";
 
 type HeroProps = Readonly<{
-  bookingHref: string;
-  content: SiteDictionary["hero"];
-  locale: Locale;
+  matteImage: string;
+  glossyImage: string;
+  title: string;
+  subtitle: string;
+  buttonText: string;
 }>;
 
-export function Hero({ bookingHref, content, locale }: HeroProps) {
+export function Hero({
+  buttonText,
+  glossyImage,
+  matteImage,
+  subtitle,
+  title,
+}: HeroProps) {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative isolate flex min-h-svh items-end overflow-hidden bg-foreground md:items-center"
+      className="isolate overflow-hidden bg-text"
     >
-      <Image
-        alt={content.imageAlt}
-        className="object-cover object-[68%_center] sm:object-[66%_center] lg:object-center"
-        fill
-        priority
-        sizes="100vw"
-        src="/images/hero-placeholder.png"
-      />
-      <div aria-hidden="true" className="hero-overlay absolute inset-0" />
+      <div
+        className="relative min-h-[clamp(20rem,48svh,40rem)] w-full overflow-hidden"
+        data-hero-matte
+      >
+        <Image
+          alt=""
+          className="object-cover object-[50%_42%]"
+          fill
+          priority
+          sizes="100vw"
+          src={matteImage}
+        />
+      </div>
 
-      <Container className="relative z-10 pb-16 pt-32 sm:pb-20 md:py-36" size="wide">
-        <div className="max-w-2xl text-surface-pure">
-          <div aria-hidden="true" className="mb-6 h-px w-12 bg-rose-soft" />
-          <h1
-            className="font-display text-display-xl font-medium text-balance"
-            id="hero-title"
-            lang={locale === "bg" ? "en" : undefined}
+      <div
+        className="relative min-h-[clamp(56rem,112svh,66rem)] w-full overflow-hidden"
+        data-hero-glossy
+      >
+        <Image
+          alt=""
+          className="object-cover object-[50%_42%]"
+          fill
+          sizes="100vw"
+          src={glossyImage}
+        />
+        <div aria-hidden="true" className="hero-overlay absolute inset-0" />
+
+        <div className="absolute inset-0 z-10 flex items-end">
+          <Container
+            className="pb-[clamp(2.5rem,7vw,6rem)] pt-20"
+            size="wide"
           >
-            {content.headline}
-          </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-surface-pure/90 sm:text-lg">
-            {content.description}
-          </p>
-          <div className="mt-8">
-            <ButtonLink href={bookingHref} variant="inverted">
-              {content.primaryAction}
-            </ButtonLink>
-          </div>
-          <p className="mt-5 text-xs font-semibold uppercase tracking-widest text-rose-soft">
-            {content.placeholderNotice}
-          </p>
+            <div className="mx-auto w-full max-w-3xl text-center text-white">
+              <h1
+                className="font-display text-display-lg font-medium text-balance"
+                id="hero-title"
+                lang="en"
+              >
+                {title}
+              </h1>
+              <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white sm:text-lg">
+                {subtitle}
+              </p>
+              <div className="mt-7">
+                <ButtonLink href="#booking-placeholder" variant="hero">
+                  {buttonText}
+                </ButtonLink>
+              </div>
+            </div>
+          </Container>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

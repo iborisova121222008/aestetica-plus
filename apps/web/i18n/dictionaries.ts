@@ -11,19 +11,16 @@ export type SiteDictionary = Readonly<{
     primary: string;
     services: string;
     gallery: string;
-    about: string;
-    contact: string;
+    shop: string;
     booking: string;
     openMenu: string;
     closeMenu: string;
     mobileMenu: string;
   }>;
   hero: Readonly<{
-    headline: string;
-    description: string;
-    primaryAction: string;
-    imageAlt: string;
-    placeholderNotice: string;
+    title: string;
+    subtitle: string;
+    buttonText: string;
   }>;
   introduction: Readonly<{
     eyebrow: string;
@@ -45,28 +42,25 @@ const bg = {
     primary: "Основна навигация",
     services: "Услуги",
     gallery: "Галерия",
-    about: "За нас",
-    contact: "Контакти",
+    shop: "Магазин",
     booking: "Запази час",
     openMenu: "Отвори менюто",
     closeMenu: "Затвори менюто",
     mobileMenu: "Мобилна навигация",
   },
   hero: {
-    headline: "Define Your Own Standard of Beauty",
-    description:
+    title: "Define Your Own Standard of Beauty",
+    subtitle:
       "Мястото, където грижата и вниманието към детайла се срещат, за да превърнат твоята визия в твой собствен критерий за красота и увереност.",
-    primaryAction: "Запази своя час",
-    imageAlt: "Временен редакционен портрет за началната страница на Aestetica Plus.",
-    placeholderNotice: "Временна развойна фотография",
+    buttonText: "Запази своя час",
   },
   introduction: {
     eyebrow: "Aestetica Plus",
     title: "Грижата започва с внимание.",
     description:
-      "Изграждаме спокойно и прецизно дигитално преживяване, което поставя яснотата, доверието и личния подход на първо място.",
+      "С внимание към всеки детайл създаваме персонализирано изживяване, което подчертава естествената ти красота и ти носи увереност. ",
     bookingPlaceholder:
-      "Онлайн записването ще бъде добавено в следващ етап. Този бутон засега води до временна секция.",
+      "Всяка процедура започва с индивидуален подход, съобразен с твоите желания и потребности.",
   },
 } as const satisfies SiteDictionary;
 
@@ -82,20 +76,17 @@ const en = {
     primary: "Primary navigation",
     services: "Services",
     gallery: "Gallery",
-    about: "About",
-    contact: "Contact",
+    shop: "Shop",
     booking: "Book",
     openMenu: "Open menu",
     closeMenu: "Close menu",
     mobileMenu: "Mobile navigation",
   },
   hero: {
-    headline: "Define Your Own Standard of Beauty",
-    description:
+    title: "Define Your Own Standard of Beauty",
+    subtitle:
       "A place where care and attention to detail come together to transform your vision into your own standard of beauty and confidence.",
-    primaryAction: "Book an Appointment",
-    imageAlt: "Temporary editorial portrait for the Aestetica Plus homepage.",
-    placeholderNotice: "Temporary development photography",
+    buttonText: "Book an Appointment",
   },
   introduction: {
     eyebrow: "Aestetica Plus",
